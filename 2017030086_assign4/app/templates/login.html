@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <div class="popup_container"> <div class="panel">{{ message }}</div> </div>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+<div class="input_panel" id="login_panel">
+    <span id="input_panel_title">Login as User: </span>
+    <form method="POST" action="/login">
+        <input type="password" id="password" name="password" placeholder="Enter User's password">
+        <button type="submit" value="Submit">Login</button>
+    </form>
+</div>
+</body>
+</html>
