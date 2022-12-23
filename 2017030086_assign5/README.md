@@ -7,6 +7,8 @@ In this assignment, using the Packet Capture library (libpcap), a program was im
 
 ---
 
+## Network traffic monitoring using the Packet Capture library
+
 Processing of the pcap file data is done through the functions of the libpcap library. Specifically, via the `pcap_open_offline(pcap_file, err)` and `pcap_loop()` functions.
 
 in order to count the network flows generated during packet capture, a struct was created with the five fields that define the flow according to its definition. That is Source IP and Port, Destination IP and Port and Transfer Layer Protocol (TCP or UDP), and a linked list of nodes in which the nodes were uniquely stored, to be later checked for duplicates.

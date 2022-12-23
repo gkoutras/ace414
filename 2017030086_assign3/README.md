@@ -4,7 +4,8 @@ In this assignment, an enhanced access control logging system was implemented us
 
 ---
 
-## logger.c
+## Enhanced Access Control Logging System
+### logger.c
 
 The access control logging process works with the classic functions `fopen()` and `fwrite()` of C. Each logging entry contains information about the user's actions. These actions are the following:
 
@@ -25,7 +26,7 @@ in the function's file pointer/argument. The latter is done by the use of functi
 
 7. **FINGERPRINT**: At first, and once the content of the final text of the file is read, the user is checked whether they have permission to call `fopen()`, through actionDenied from field 5. If they don't, then fingerprint is 0. After getting the text reading pointer to the beginning (as there are cases where it is at the end eg. append), the whole text is read and the fingerprint is taken, by calling `str2md5()` function. 
 
-## acmonitor.c
+### acmonitor.c
 
 In all cases, the file `file_logging.log` is read at the start and its data stored in a struct entry table. This tool has the following two functions:
 
@@ -33,6 +34,6 @@ In all cases, the file `file_logging.log` is read at the start and its data stor
 
 2. **LIST FILE'S MODIFICATIONS**: After obtaining all the distinct UIDs found in the record table, the first fingerprint recorded for the wanted file is searched for each. Every time the new fingerprint is different from the last, number of conversions is incremented. If this number is at least 1, then it is printed, along with the UID of the user who made them.
 
-## test_aclog.c:
+### test_aclog.c:
 
 To test the tool, some functions/scripts have been created in which files are created/rewritten, while the access rights of the user who called them are removed. To test for more users, new users were created via `adduser` and `su`, and the program was called by the superuser.

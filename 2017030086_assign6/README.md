@@ -6,4 +6,5 @@ In this assignment, a Bash script was implemented, that uses the Linux command `
 
 ## Network Scanning and Iptables
 
-RE MAIK... TI STON POUTSO RE MAN?...
+RE MAIK... TI STO POUTSO RE MAN?..
+
